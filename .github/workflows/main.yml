@@ -16,7 +16,7 @@ jobs:
         run: |
           echo "SSH_HOST is set: ${{ secrets.SSH_HOST != '' }}"
           echo "SSH_USERNAME is set: ${{ secrets.SSH_USERNAME != '' }}"
-          echo "SSH_PRIVATE_KEY is set: ${{ secrets.SSH_PRIVATE_KEY != '' }}"
+          echo "SSH_KEY is set: ${{ secrets.SSH_KEY != '' }}"
           echo "SSH_HOST length: ${#SSH_HOST}"  # This will show 0 if not set
 
       - name: Deploy to server
@@ -24,12 +24,12 @@ jobs:
         with:
           host: ${{ secrets.SSH_HOST }}
           username: ${{ secrets.SSH_USERNAME }}
-          key: ${{ secrets.SSH_PRIVATE_KEY }}
+          key: ${{ secrets.SSH_KEY }}
           port: 22
           script: |
             echo "🚀 Connected successfully to $(hostname)"
             echo "📁 Changing to project directory..."
-            cd /var/www/apps/unity/web
+            cd /var/www/apps/unity/web/unity-dental-website
 
             echo "📥 Pulling latest changes..."
             git pull origin main

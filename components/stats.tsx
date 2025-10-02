@@ -1,9 +1,9 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { useInView } from "framer-motion"
-import { useRef } from "react"
-import { Award, Users, Clock, Star } from "lucide-react"
+import { motion } from "framer-motion";
+import { useInView } from "framer-motion";
+import { useRef } from "react";
+import { Award, Users, Clock, Star } from "lucide-react";
 
 const stats = [
   {
@@ -14,7 +14,7 @@ const stats = [
   },
   {
     icon: Award,
-    value: "15+",
+    value: "13+",
     label: "Years Experience",
     description: "Industry expertise",
   },
@@ -30,11 +30,11 @@ const stats = [
     label: "Emergency Care",
     description: "Always available",
   },
-]
+];
 
 export function Stats() {
-  const ref = useRef(null)
-  const isInView = useInView(ref, { once: true, margin: "-100px" })
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true, margin: "-100px" });
 
   return (
     <section ref={ref} className="py-20 bg-card border-y border-border relative overflow-hidden">
@@ -51,7 +51,7 @@ export function Stats() {
       <div className="container mx-auto px-4 relative z-10">
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8">
           {stats.map((stat, index) => {
-            const Icon = stat.icon
+            const Icon = stat.icon;
             return (
               <motion.div
                 key={index}
@@ -77,16 +77,14 @@ export function Stats() {
                   >
                     {stat.value}
                   </motion.h3>
-                  <p className="text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">
-                    {stat.label}
-                  </p>
+                  <p className="text-lg font-semibold text-foreground mb-1 group-hover:text-primary transition-colors duration-300">{stat.label}</p>
                   <p className="text-sm text-muted-foreground">{stat.description}</p>
                 </div>
               </motion.div>
-            )
+            );
           })}
         </div>
       </div>
     </section>
-  )
+  );
 }

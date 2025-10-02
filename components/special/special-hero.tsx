@@ -1,7 +1,7 @@
-"use client"
+"use client";
 
-import { motion } from "framer-motion"
-import { Gift } from "lucide-react"
+import { motion } from "framer-motion";
+import { Gift } from "lucide-react";
 
 export function SpecialHero() {
   return (
@@ -12,12 +12,7 @@ export function SpecialHero() {
       </div>
 
       <div className="container mx-auto px-4 relative z-10">
-        <motion.div
-          initial={{ opacity: 0, y: 30 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.8 }}
-          className="text-center max-w-4xl mx-auto space-y-6"
-        >
+        <motion.div initial={{ opacity: 0, y: 30 }} animate={{ opacity: 1, y: 0 }} transition={{ duration: 0.8 }} className="text-center max-w-4xl mx-auto space-y-6">
           <div className="inline-flex items-center gap-2 px-4 py-2 rounded-full bg-secondary border border-primary/20 mb-4">
             <Gift size={16} className="text-primary" />
             <span className="text-sm text-foreground">Limited Time Offers</span>
@@ -28,8 +23,7 @@ export function SpecialHero() {
           </h1>
 
           <p className="text-lg md:text-xl text-muted-foreground leading-relaxed max-w-3xl mx-auto">
-            Take advantage of our premium dental services at exceptional value. Limited time promotions designed to make
-            your dream smile more affordable.
+            Take advantage of our premium dental services at exceptional value. Limited time promotions designed to make your dream smile more affordable.
           </p>
 
           <div className="flex items-center justify-center gap-8 pt-4">
@@ -39,12 +33,12 @@ export function SpecialHero() {
             </div>
             <div className="w-px h-12 bg-border" />
             <div className="text-center">
-              <p className="text-4xl font-bold text-primary">$0</p>
+              <p className="text-4xl font-bold text-primary">₹0</p>
               <p className="text-sm text-muted-foreground">Consultation Fee</p>
             </div>
           </div>
         </motion.div>
       </div>
     </section>
-  )
+  );
 }
